@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/estilos/nav.css" />
+    <link rel="stylesheet" href="/estilos/stilosComunes.css" />
+  </head>
+
+  <body>
+    <div id="todo">
+      <div id="mono">
+        <div id="añadir_palabra">
+          <div id="divValidez">
+            <p id="validez">Codigo cuadrados</p>
+          </div>
+        </div>
+        <div id="envolver">
+          <div id="container"></div>
+        </div>
+      </div>
+      <div id="formContainer">
+        <button onclick="crearCuadrado()">Crear Cuadrado</button>
+        <button class="btn-duplicar" onclick="duplicarCuadrado()">
+          Duplicar Cuadrado
+        </button>
+        <button onclick="eliminarCuadrado()">Eliminar Cuadrado</button>
+        <button onclick="deseleccionarCuadrado()">
+          Deseleccionar Cuadrado
+        </button>
+        <button onclick="enviarAlFondo()">Enviar al Fondo</button>
+        <button onclick="printCuadrados()">Obtener codigo cuadrados</button>
+        <input
+          type="text"
+          id="añadirCuadradosPorCodigo"
+          placeholder="codigo cuadrados para añadir"
+        />
+        <button onclick="añadirCuadradosPorCodigo()">
+          Añadir cuadrados por codigo
+        </button>
+        <label for="colorPicker">Color:</label>
+        <input type="color" id="colorPicker" onchange="cambiarColor()" />
+
+        <div class="control-label">
+          <label for="borderRadius">Radio de Borde:</label>
+          <div class="control-label">
+            <label for="borderUnit">Unidad de Borde:</label>
+            <select id="borderUnit" onchange="cambiarRadio()">
+              <option value="px">px</option>
+              <option value="%">%</option>
+            </select>
+          </div>
+          <span id="borderRadiusValue" class="value-label">0</span>
+        </div>
+        <input
+          type="range"
+          id="borderRadius"
+          min="0"
+          max="150"
+          step="0.01"
+          value="0"
+          onchange="cambiarRadio()"
+        />
+        <input
+          type="number"
+          id="borderRadius_number"
+          min="0"
+          max="150"
+          step="0.01"
+          value="0"
+          onchange="cambiarRadioNumber()"
+        />
+
+        <div class="control-label">
+          <label for="width">Anchura:</label>
+          <span id="widthValue" class="value-label">0</span>
+        </div>
+        <input
+          type="range"
+          id="width"
+          min="0"
+          max="100"
+          step="0.01"
+          value="0"
+          onchange="cambiarAnchura()"
+        />
+        <input
+          type="number"
+          id="width_number"
+          min="0"
+          max="100"
+          step="0.01"
+          value="0"
+          onchange="cambiarAnchuraNumber()"
+        />
+
+        <div class="control-label">
+          <label for="height">Altura:</label>
+          <span id="heightValue" class="value-label">0</span>
+        </div>
+        <input
+          type="range"
+          id="height"
+          min="0"
+          max="100"
+          step="0.01"
+          value="0"
+          onchange="cambiarAltura()"
+        />
+        <input
+          type="number"
+          id="height_number"
+          min="0"
+          max="100"
+          step="0.01"
+          value="0"
+          onchange="cambiarAlturaNumber()"
+        />
+
+        <div class="control-label">
+          <label for="rotation">Rotación (grados):</label>
+          <span id="rotationValue" class="value-label">0</span>
+        </div>
+        <input
+          type="range"
+          id="rotation"
+          min="0"
+          max="360"
+          step="0.01"
+          value="0"
+          onchange="rotarCuadrado()"
+        />
+        <input
+          type="number"
+          id="rotation_number"
+          min="0"
+          max="360"
+          step="1"
+          value="0"
+          onchange="rotarCuadradoNumber()"
+        />
+
+        <div class="control-label">
+          <label for="rotateX">RotateX (grados):</label>
+          <span id="rotateXValue" class="value-label">0</span>
+        </div>
+        <input
+          type="range"
+          id="rotateX"
+          min="0"
+          max="360"
+          step="0.01"
+          value="0"
+          onchange="cambiarRotateX()"
+        />
+        <input
+          type="number"
+          id="rotateX_number"
+          min="0"
+          max="360"
+          step="1"
+          value="0"
+          onchange="cambiarRotateXNumber()"
+        />
+
+        <div class="control-label">
+          <label for="rotateY">RotateY (grados):</label>
+          <span id="rotateYValue" class="value-label">0</span>
+        </div>
+        <input
+          type="range"
+          id="rotateY"
+          min="0"
+          max="360"
+          step="0.01"
+          value="0"
+          onchange="cambiarRotateY()"
+        />
+        <input
+          type="number"
+          id="rotateY_number"
+          min="0"
+          max="360"
+          step="1"
+          value="0"
+          onchange="cambiarRotateYNumber()"
+        />
+
+        <input
+          type="text"
+          onchange="cambiarPuntoRotacion()"
+          id="puntoDeRotacion"
+          placeholder="Punto de rotacion"
+        />
+
+        <input
+          type="text"
+          onchange="cambiarNombre()"
+          id="nombre"
+          placeholder="Nombre del div"
+        />
+
+        <span id="top" class="value-label">left</span>
+        <span id="left" class="value-label">top</span>
+
+        <div class="pencilControls">
+          <label for="canvasHeight"
+            >Altura de la pizarra: Siempre escala 16:9</label
+          >
+          <input
+            type="range"
+            id="canvasHeight"
+            value="350"
+            min="0"
+            max="1000"
+            onchange="ajustarTamanio()"
+          />
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+    <script type="module" src="buttonCrearPersona.js"></script>
+    <script src="dragging.js"></script>
+    <script src="properties.js"></script>
+    <script src="/JScomun/movil.js"></script>
+
+    <script src="/JScomun/nav.js"></script>
+  </body>
+</html>

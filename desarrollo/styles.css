@@ -1,0 +1,34 @@
+#añadir_palabra {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#añadir palabra div {
+  display: flex;
+  flex-direction: row;
+}
+
+#añadir_palabra p {
+  color: black;
+}
+
+#añadir_palabra input {
+  font-size: 0.9rem;
+  padding: 0.3rem;
+}
+
+#divValidez {
+  overflow: auto;
+  width: 100%;
+  height: 2rem;
+}
+
+#validez {
+  width: inherit;
+  height: 2rem;
+}
+
+#envolver {
+  border: 2px solid black;
+}

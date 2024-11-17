@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/estilos/nav.css" />
+    <link rel="stylesheet" href="/estilos/stilosComunes.css" />
+  </head>
+
+  <body>
+    <div id="todo">
+      <div id="mono">
+        <div id="añadir_palabra">
+          <div>
+            <input
+              type="text"
+              placeholder="Palabra a añadir"
+              id="palabra"
+              onchange="sePuedeAñadirPalabra()"
+            />
+            <select
+              id="selectSePuedeAñadirPalabra"
+              onchange="sePuedeAñadirPalabra()"
+            >
+              <option value="palabras">Palabra</option>
+              <option value="abecedario">Letra</option>
+            </select>
+          </div>
+          <div>
+            <p id="sePuedeAñadirPalabra">Ya creada / No creada</p>
+          </div>
+          <div id="divValidez">
+            <p id="validez">Codigo cuadrados</p>
+          </div>
+        </div>
+        <div id="envolver">
+          <div id="container">
+            <div id="resto"></div>
+            <div id="brazoIzquierdo">
+              <div id="antebrazoIzquierdo">
+                <div id="manoIzquierdaEntera">
+                  <div id="dedoIzquierdo1Entero">
+                    <div id="dedoIzquierdo11Entero"></div>
+                  </div>
+                  <div id="dedoIzquierdo2Entero">
+                    <div id="dedoIzquierdo22Entero"></div>
+                  </div>
+                  <div id="dedoIzquierdo3Entero">
+                    <div id="dedoIzquierdo33Entero"></div>
+                  </div>
+                  <div id="dedoIzquierdo4Entero">
+                    <div id="dedoIzquierdo44Entero"></div>
+                  </div>
+                  <div id="pulgarIzquierdoEntero"></div>
+                </div>
+              </div>
+            </div>
+            <div id="brazoDerecho">
+              <div id="antebrazoDerecho">
+                <div id="manoDerechaEntera">
+                  <div id="dedoDerecho1Entero">
+                    <div id="dedoDerecho11Entero"></div>
+                  </div>
+                  <div id="dedoDerecho2Entero">
+                    <div id="dedoDerecho22Entero"></div>
+                  </div>
+                  <div id="dedoDerecho3Entero">
+                    <div id="dedoDerecho33Entero"></div>
+                  </div>
+                  <div id="dedoDerecho4Entero">
+                    <div id="dedoDerecho44Entero"></div>
+                  </div>
+                  <div id="pulgarDerechoEntero"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="formContainer">
+        <button onclick="deseleccionarCuadrado()">
+          Deseleccionar Cuadrado
+        </button>
+        <button onclick="enviarAlFondo()">Enviar al Fondo</button>
+        <button onclick="printCuadrados()">Obtener codigo cuadrados</button>
+        <button onclick="printRotacionCuadrados()">
+          Obtener rotación cuadrados
+        </button>
+        <select onchange="selectCuadrado()" id="nombreSelector"></select>
+        <div class="control-label">
+          <label for="zIndex">zIndex:</label>
+          <span id="zIndexValue" class="value-label">0</span>
+        </div>
+        <input type="number" id="zIndex" value="0" onchange="zIndex()" />
+
+        <div class="control-label">
+          <label for="rotation">Rotación (grados):</label>
+          <span id="rotationValue" class="value-label">0</span>
+        </div>
+        <input
+          type="range"
+          id="rotation"
+          min="0"
+          max="360"
+          step="0.01"
+          value="0"
+          onchange="rotarCuadrado()"
+        />
+        <input
+          type="number"
+          id="rotation_number"
+          min="-360"
+          max="360"
+          step="1"
+          value="0"
+          onchange="rotarCuadradoNumber()"
+        />
+
+        <div class="control-label">
+          <label for="rotateX">RotateX (grados):</label>
+          <span id="rotateXValue" class="value-label">0</span>
+        </div>
+        <input
+          type="range"
+          id="rotateX"
+          min="0"
+          max="360"
+          step="0.01"
+          value="0"
+          onchange="cambiarRotateX()"
+        />
+        <input
+          type="number"
+          id="rotateX_number"
+          min="0"
+          max="360"
+          step="1"
+          value="0"
+          onchange="cambiarRotateXNumber()"
+        />
+
+        <div class="control-label">
+          <label for="rotateY">RotateY (grados):</label>
+          <span id="rotateYValue" class="value-label">0</span>
+        </div>
+        <input
+          type="range"
+          id="rotateY"
+          min="0"
+          max="360"
+          step="0.01"
+          value="0"
+          onchange="cambiarRotateY()"
+        />
+        <input
+          type="number"
+          id="rotateY_number"
+          min="0"
+          max="360"
+          step="1"
+          value="0"
+          onchange="cambiarRotateYNumber()"
+        />
+
+        <span id="top" class="value-label">left</span>
+        <span id="left" class="value-label">top</span>
+
+        <div class="pencilControls">
+          <label for="canvasHeight"
+            >Altura de la pizarra: Siempre escala 16:9</label
+          >
+          <input
+            type="range"
+            id="canvasHeight"
+            value="350"
+            min="0"
+            max="1000"
+            onchange="ajustarTamanio()"
+          />
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+    <script src="properties.js"></script>
+    <script src="sePuedeAñadirPalabra.js"></script>
+
+    <script type="module" src="/JScomun/renderInicial.js"></script>
+    <script src="/JScomun/movil.js"></script>
+    <script src="/JScomun/modificarPersona.js"></script>
+    <script src="/JScomun/cambiarRotaciones.js"></script>
+    <script src="/JScomun/nav.js"></script>
+    <script src="/JScomun/crearCuadrados.js"></script>
+
+    <script src="/datos/palabras.js"></script>
+    <script src="/datos/abecedario.js"></script>
+    <script src="/datos/personaBase.js"></script>
+  </body>
+</html>

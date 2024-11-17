@@ -1,0 +1,14 @@
+#divValidez {
+  overflow: auto;
+  width: 100%;
+  height: 2rem;
+}
+
+#validez {
+  width: inherit;
+  height: 2rem;
+}
+
+#envolver {
+  border: 2px solid black;
+}

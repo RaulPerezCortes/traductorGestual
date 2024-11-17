@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/inicio/styles.css" />
+    <link rel="stylesheet" href="/estilos/nav.css" />
+    <link rel="stylesheet" href="/estilos/stilosComunes.css" />
+  </head>
+
+  <body>
+    <div id="form">
+      <div>
+        <div id="formEntradaTexto">
+          <input
+            type="text"
+            id="entradaTexto"
+            placeholder="Introduce el texto a traducir"
+            onchange="procesarTexto()"
+          />
+          <button id="resetEntradaTexto" onclick="resetEntradaTexto()">
+            ❌
+          </button>
+        </div>
+
+        <div id="buttons">
+          <button onclick="toggleEntradaVoz()" id="botonHablar">Escuchar</button
+          ><button id="botonTiempoReal">Tiempo real</button
+          ><button id="traducir" onclick="cambiarPersona()">Traducir</button>
+        </div>
+
+        <input
+          type="range"
+          id="canvasHeight"
+          value="350"
+          min="0"
+          max="1000"
+          onchange="ajustarTamanio()"
+        />
+      </div>
+      <div id="procesado">
+        <p>Texto por traducir: <span id="textoProcesado"></span></p>
+      </div>
+    </div>
+    <div id="envolver">
+      <div id="container">
+        <div id="resto"></div>
+        <div id="brazoIzquierdo">
+          <div id="antebrazoIzquierdo">
+            <div id="manoIzquierdaEntera">
+              <div id="dedoIzquierdo1Entero">
+                <div id="dedoIzquierdo11Entero"></div>
+              </div>
+              <div id="dedoIzquierdo2Entero">
+                <div id="dedoIzquierdo22Entero"></div>
+              </div>
+              <div id="dedoIzquierdo3Entero">
+                <div id="dedoIzquierdo33Entero"></div>
+              </div>
+              <div id="dedoIzquierdo4Entero">
+                <div id="dedoIzquierdo44Entero"></div>
+              </div>
+              <div id="pulgarIzquierdoEntero"></div>
+            </div>
+          </div>
+        </div>
+        <div id="brazoDerecho">
+          <div id="antebrazoDerecho">
+            <div id="manoDerechaEntera">
+              <div id="dedoDerecho1Entero">
+                <div id="dedoDerecho11Entero"></div>
+              </div>
+              <div id="dedoDerecho2Entero">
+                <div id="dedoDerecho22Entero"></div>
+              </div>
+              <div id="dedoDerecho3Entero">
+                <div id="dedoDerecho33Entero"></div>
+              </div>
+              <div id="dedoDerecho4Entero">
+                <div id="dedoDerecho44Entero"></div>
+              </div>
+              <div id="pulgarDerechoEntero"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/inicio/main.js"></script>
+    <script src="/inicio/escuchar.js"></script>
+    <script src="/inicio/procesarTexto.js"></script>
+    <script src="/inicio/cambiarPersona.js"></script>
+    <script src="/inicio/traducciónTiempoReal.js"></script>
+
+    <script type="module" src="/JScomun/renderInicial.js"></script>
+
+    <script src="/JScomun/cambiarRotaciones.js"></script>
+    <script src="/JScomun/movil.js"></script>
+    <script src="/JScomun/modificarPersona.js"></script>
+    <script src="/JScomun/nav.js"></script>
+    <script src="/JScomun/divRenderCuadrados.js"></script>
+
+    <script src="/datos/palabras.js"></script>
+    <script src="/datos/abecedario.js"></script>
+    <script src="/datos/personaBase.js"></script>
+  </body>
+</html>
