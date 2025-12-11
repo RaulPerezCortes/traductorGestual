@@ -3,9 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS propio de creacion (dentro de la misma carpeta) -->
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="/estilos/nav.css" />
-    <link rel="stylesheet" href="/estilos/stilosComunes.css" />
+
+    <!-- CSS comunes: carpeta estilos está una carpeta arriba -->
+    <link rel="stylesheet" href="../estilos/nav.css" />
+    <link rel="stylesheet" href="../estilos/stilosComunes.css" />
   </head>
 
   <body>
@@ -219,12 +222,14 @@
         </div>
       </div>
     </div>
+    <!-- JS propios de creacion (misma carpeta) -->
     <script src="main.js"></script>
     <script type="module" src="buttonCrearPersona.js"></script>
     <script src="dragging.js"></script>
     <script src="properties.js"></script>
-    <script src="/JScomun/movil.js"></script>
 
-    <script src="/JScomun/nav.js"></script>
+    <!-- JS comunes: carpeta JScomun está una carpeta arriba -->
+    <script src="../JScomun/movil.js"></script>
+    <script src="../JScomun/nav.js"></script>
   </body>
 </html>
