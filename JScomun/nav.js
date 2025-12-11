@@ -1,24 +1,32 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Crear el elemento header
-  var header = document.createElement("header");
+  // Detectar si estamos en una subpágina (/creacion/, /desarrollo/, etc.)
+  const path = window.location.pathname;
+
+  // Si la ruta contiene "/creacion" o "/desarrollo", estamos en subcarpeta
+  const enSubcarpeta =
+    path.includes("/creacion") || path.includes("/desarrollo");
+
+  // Desde la raíz: "./"
+  // Desde subcarpeta: "../"
+  const base = enSubcarpeta ? "../" : "./";
 
   document.title = "TraductorGestual";
 
-  // Crear el contenido del header
+  const header = document.createElement("header");
+
   header.innerHTML = `
-        <a href="/">
-            <p>TraductorGestual</p>
-        </a>
+    <a href="${base}">
+      <p>TraductorGestual</p>
+    </a>
 
-        <nav>
-            <ul>
-                <li><a href="/">Inicio</a></li>
-                <li><a href="/desarrollo">Desarrollo</a></li>
-                <li><a href="/creacion">Creacion</a></li>
-            </ul>
-        </nav>
-    `;
+    <nav>
+      <ul>
+        <li><a href="${base}">Inicio</a></li>
+        <li><a href="${base}desarrollo/">Desarrollo</a></li>
+        <li><a href="${base}creacion/">Creacion</a></li>
+      </ul>
+    </nav>
+  `;
 
-  // Agregar el header al comienzo del cuerpo del documento
   document.body.prepend(header);
 });
