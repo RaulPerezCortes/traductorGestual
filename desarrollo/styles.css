@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  padding: 0.75rem;
 }
 
 #añadir palabra div {
@@ -10,12 +14,12 @@
 }
 
 #añadir_palabra p {
-  color: black;
+  color: #0f172a;
 }
 
 #añadir_palabra input {
   font-size: 0.9rem;
-  padding: 0.3rem;
+  padding: 0.4rem;
 }
 
 #divValidez {
@@ -30,5 +34,8 @@
 }
 
 #envolver {
-  border: 2px solid black;
+  border: 2px solid #1e293b;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
+  background: #f8fafc;
 }
